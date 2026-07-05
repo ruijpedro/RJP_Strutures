@@ -1,12 +1,10 @@
-name: Build WebApp
+name: Build Android APK
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 jobs:
-  build-web:
+  build-android:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,10 +13,7 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install --no-audit --no-fund --legacy-peer-deps
-      - name: Build
+      - name: Build WebApp
         run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: SmartStruct_RJP_WebApp
-          path: dist
+      - name: Android placeholder
+        run: echo "Capacitor Android será adicionado no bloco Android depois do Core estabilizar."
