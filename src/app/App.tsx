@@ -13,9 +13,10 @@ import { SptPage } from '../modules/spt/SptPage';
 import { CptPage } from '../modules/cpt/CptPage';
 import { SlopesPage } from '../modules/slopes/SlopesPage';
 import { LibraryPage } from '../modules/library/LibraryPage';
+import { SoilNailsPage, AnchorsPage, ShotcretePage, DrainageMasksPage, HorizontalDrainsPage, RockfillPage, NetsPage, BarriersPage, GeosyntheticsPage } from '../modules/stabilization';
 
 export function App() {
   const [active, setActive] = useState<ModuleKey>('dashboard');
   const [menuOpen, setMenuOpen] = useState(false);
-  return <div className="app"><Topbar onMenu={() => setMenuOpen(!menuOpen)}/><div className="shell"><Sidebar active={active} setActive={(key) => { setActive(key); setMenuOpen(false); }} open={menuOpen}/><div className="content">{active === 'dashboard' && <DashboardPage/>}{active === 'beams' && <BeamsPage/>}{active === 'columns' && <ColumnsPage/>}{active === 'slabs' && <SlabsPage/>}{active === 'footings' && <FootingsPage/>}{active === 'pressures' && <PressuresPage/>}{active === 'retainingWalls' && <RetainingWallsPage/>}{active === 'spt' && <SptPage/>}{active === 'cpt' && <CptPage/>}{active === 'slopes' && <SlopesPage/>}{active === 'library' && <LibraryPage/>}</div></div></div>;
+  return <div className="app"><Topbar onMenu={() => setMenuOpen(!menuOpen)}/><div className="shell"><Sidebar active={active} setActive={(key) => { setActive(key); setMenuOpen(false); }} open={menuOpen}/><div className="content">{active === 'dashboard' && <DashboardPage/>}{active === 'beams' && <BeamsPage/>}{active === 'columns' && <ColumnsPage/>}{active === 'slabs' && <SlabsPage/>}{active === 'footings' && <FootingsPage/>}{active === 'pressures' && <PressuresPage/>}{active === 'retainingWalls' && <RetainingWallsPage/>}{active === 'spt' && <SptPage/>}{active === 'cpt' && <CptPage/>}{active === 'slopes' && <SlopesPage/>}{active === 'soilNails' && <SoilNailsPage/>}{active === 'anchors' && <AnchorsPage/>}{active === 'shotcrete' && <ShotcretePage/>}{active === 'drainageMasks' && <DrainageMasksPage/>}{active === 'horizontalDrains' && <HorizontalDrainsPage/>}{active === 'rockfill' && <RockfillPage/>}{active === 'nets' && <NetsPage/>}{active === 'barriers' && <BarriersPage/>}{active === 'geosynthetics' && <GeosyntheticsPage/>}{active === 'library' && <LibraryPage/>}</div></div></div>;
 }
