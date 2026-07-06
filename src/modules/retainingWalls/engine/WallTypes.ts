@@ -1,0 +1,2 @@
+export interface WallInput { height: number; stemThickness: number; baseWidth: number; toe: number; heel: number; gammaSoil: number; phi: number; surcharge: number; concreteUnitWeight: number; bearingCapacity: number; frictionCoeff: number; }
+export interface WallResult { ka: number; activeForce: number; overturningMoment: number; wallWeight: number; soilWeight: number; resistingMoment: number; verticalLoad: number; eccentricity: number; sigmaMax: number; sigmaMin: number; fsSliding: number; fsOverturning: number; status: 'ok' | 'warning'; }

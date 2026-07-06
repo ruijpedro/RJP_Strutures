@@ -1,0 +1,2 @@
+export interface FootingInput { lengthM: number; widthM: number; thicknessM: number; columnX: number; columnY: number; nedKn: number; mxKnM: number; myKnM: number; soilQadmKpa: number; concreteFck: number; steelFyd: number; }
+export interface FootingResult { areaM2: number; ex: number; ey: number; sigmaAvg: number; sigmaMax: number; sigmaMin: number; medX: number; medY: number; asX: number; asY: number; punchingDemand: number; status: 'ok' | 'warning'; notes: string[]; }
