@@ -1,4 +1,4 @@
-import { BookOpen, Home, Ruler, Columns3, SquareStack, Box, Waves, BrickWall, Mountain, Gauge, Activity, Anchor, Shield, Droplets, Pickaxe, Network, Sprout, Hammer } from 'lucide-react';
+import { BookOpen, Home, Ruler, Columns3, SquareStack, Box, Waves, BrickWall, Mountain, Gauge, Activity, Anchor, Shield, Droplets, Pickaxe, Network, Sprout, Hammer, Route, Calculator, Library } from 'lucide-react';
 import type { ReactNode } from 'react';
 import type { ModuleKey } from '../core/types';
 
@@ -29,7 +29,18 @@ const stabilizationItems: Array<{key: ModuleKey; label: string; icon: ReactNode}
   { key: 'barriers', label: 'Barreiras', icon: <Shield size={18}/> },
   { key: 'geosynthetics', label: 'Geossintéticos', icon: <Sprout size={18}/> }
 ];
+
+const hydraulicsItems: Array<{key: ModuleKey; label: string; icon: ReactNode}> = [
+  { key: 'channels', label: 'Valetas', icon: <Waves size={18}/> },
+  { key: 'culverts', label: 'Passagens hidráulicas', icon: <Box size={18}/> },
+  { key: 'drainage', label: 'Drenagem', icon: <Droplets size={18}/> },
+  { key: 'longitudinalDrainage', label: 'Drenagem longitudinal', icon: <Route size={18}/> },
+  { key: 'transversalDrainage', label: 'Drenagem transversal', icon: <Route size={18}/> },
+  { key: 'manning', label: 'Manning', icon: <Calculator size={18}/> },
+  { key: 'hydraulicsLibrary', label: 'Biblioteca hidráulica', icon: <Library size={18}/> }
+];
+
 export function Sidebar({ active, setActive, open }: Props) {
   const renderItem = (item: {key: ModuleKey; label: string; icon: ReactNode}) => <button key={item.key} className={active === item.key ? 'active' : ''} onClick={() => setActive(item.key)}>{item.icon}<span>{item.label}</span></button>;
-  return <aside className={`sidebar ${open ? 'open' : ''}`}><div className="side-group">Estruturas</div>{structureItems.map(renderItem)}<div className="side-group">Geotecnia</div>{geotechItems.map(renderItem)}<div className="side-group">Estabilização</div>{stabilizationItems.map(renderItem)}<div className="side-group">Apoio</div>{renderItem({ key: 'library', label: 'Biblioteca', icon: <BookOpen size={18}/> })}</aside>;
+  return <aside className={`sidebar ${open ? 'open' : ''}`}><div className="side-group">Estruturas</div>{structureItems.map(renderItem)}<div className="side-group">Geotecnia</div>{geotechItems.map(renderItem)}<div className="side-group">Estabilização</div>{stabilizationItems.map(renderItem)}<div className="side-group">Hidráulica</div>{hydraulicsItems.map(renderItem)}<div className="side-group">Apoio</div>{renderItem({ key: 'library', label: 'Biblioteca', icon: <BookOpen size={18}/> })}</aside>;
 }
