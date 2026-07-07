@@ -1,11 +1,11 @@
 {
   "name": "smartstruct-rjp",
+  "version": "17.0.1",
   "private": true,
-  "version": "17.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,10 +14,12 @@
     "typescript": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest"
+    "@capacitor/core": "latest",
+    "@capacitor/android": "latest"
   },
   "devDependencies": {
     "@types/react": "latest",
-    "@types/react-dom": "latest"
+    "@types/react-dom": "latest",
+    "@capacitor/cli": "latest"
   }
 }
