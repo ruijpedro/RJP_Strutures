@@ -1,6 +1,6 @@
 {
   "name": "smartstruct-rjp",
-  "version": "17.0.1",
+  "version": "17.0.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,12 +14,8 @@
     "typescript": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "@capacitor/core": "latest",
-    "@capacitor/android": "latest"
-  },
-  "devDependencies": {
     "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "@capacitor/cli": "latest"
-  }
+    "@types/react-dom": "latest"
+  },
+  "devDependencies": {}
 }
