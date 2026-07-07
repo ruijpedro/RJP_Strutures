@@ -5,6 +5,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   build-webapp:
     runs-on: ubuntu-latest
@@ -19,7 +22,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Clean npm
+      - name: Clean npm state
         run: |
           rm -rf node_modules package-lock.json
           npm cache clean --force
@@ -33,5 +36,5 @@ jobs:
       - name: Upload WebApp artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SmartStruct_RJP_WebApp
+          name: SmartStruct-RJP-WebApp
           path: dist
